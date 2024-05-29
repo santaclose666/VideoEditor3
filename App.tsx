@@ -1,62 +1,21 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
-
 import React from 'react';
-import type {PropsWithChildren} from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,useWindowDimensions
-} from 'react-native';
+import 'react-native-get-random-values';
+import {GestureHandlerRootView} from 'react-native-gesture-handler';
+import RootNavigation from './src/navigation/RootNavigation';
+import {RealmProvider} from '@realm/react';
+import {VideoEditing, VideoDownloaded} from './src/database/models';
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
-import NavigateContainer from './src/NavigateContainer/NavigateContainer';
-function App(): JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
-
-  const {width,height}=useWindowDimensions()
+const App = () => {
   return (
-    <SafeAreaView style={[backgroundStyle,{flex:1,width:width,height:height}]}>
-   <NavigateContainer/>
-    </SafeAreaView>
+    <RealmProvider
+      schema={[VideoEditing, VideoDownloaded]}
+      schemaVersion={0}
+      deleteRealmIfMigrationNeeded={true}>
+      <GestureHandlerRootView style={{flex: 1}}>
+        <RootNavigation />
+      </GestureHandlerRootView>
+    </RealmProvider>
   );
-}
-
-const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-});
+};
 
 export default App;
