@@ -5,7 +5,9 @@ VideoEditor 03 is a video editing application allowing users to import videos fr
 1. Import videos from various sources, including links, local storage, and media libraries
 2. Preview and trim videos, along with the capability to adjust playback speed for specific segments within the video timeline.
 
-## Demo:
+## Video Demo: https://drive.google.com/file/d/1ji_0ubIQ3bXHRUa5MVfFOwNHAx0yX6Wu/view?usp=sharing
+
+## Screenshots Demo:
 <p align="center">
   <img src=https://github.com/santaclose666/VideoEditor3/assets/90021195/81ac9e70-8a7f-4b3f-a6aa-43f64e0b3ea9 alt="img1" style="display:inline-block; margin-right:10px;" width="200">
   <img src=https://github.com/santaclose666/VideoEditor3/assets/90021195/bac5cb23-f24f-4aba-8757-4f159b13d9fc alt="img2" style="display:inline-block; margin-right:10px;" width="200">
